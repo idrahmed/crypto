@@ -1,0 +1,65 @@
+.wrapper {
+  cursor: pointer;
+  :hover {
+    background-color: rgb(36, 40, 44);
+  }
+}
+
+.container {
+  width: 90%;
+  height: 130px;
+  background-color: #202528;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 1rem;
+  position: relative;
+
+  .left__flex {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    .left__data {
+      p {
+        font-size: 0.9rem;
+      
+      }
+    }
+    .img {
+      position: relative;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  .right {
+    font-weight: 200;
+    font-size: 0.9rem;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    .positive {
+      color: rgb(14,203,129);
+    }
+
+    .negative {
+      color: rgb(224, 107, 107);
+    }
+  }
+}
+
+.info {
+  padding-top: 14px;
+  p {
+    font-size: .8rem ;
+    padding-right: 15px;
+    padding-bottom: 2px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+    color: rgb(209, 207, 207);
+  }
+}

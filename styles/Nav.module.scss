@@ -1,0 +1,40 @@
+.wrapper {
+    height: 28vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 60px 0 60px;
+  align-items: center;
+  width: 100%;
+
+  h2 {
+    color: #BB86FC;
+    cursor: pointer;
+  }
+
+  .right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+  }
+
+  a {
+    color: rgb(219, 219, 219);
+  }
+
+  .nav__items {
+    svg {
+      padding-top: 8px;
+      height: 40px;
+      width: 40px;
+      &:hover {
+        cursor: pointer;
+        color: white;
+      }
+    }
+  }
+ 
+}
