@@ -34,14 +34,13 @@ const AllCoins = ({ currency }) => {
     );
   };
 
-  const fetchCoins = async () => {
-    setLoading(true);
-    const { data } = await axios.get(getCoinList(currency));
-    setCoins(data);
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const fetchCoins = async () => {
+      setLoading(true);
+      const { data } = await axios.get(getCoinList(currency));
+      setCoins(data);
+      setLoading(false);
+    };
     fetchCoins();
   }, [currency]);
 

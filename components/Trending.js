@@ -28,14 +28,13 @@ const Trending = ({ currency }) => {
   const [trending, setTrending] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchTrendingCoins = async () => {
-    setLoading(true);
-    const { data } = await axios.get(getTrendingCoins(currency));
-    setTrending(data);
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const fetchTrendingCoins = async () => {
+      setLoading(true);
+      const { data } = await axios.get(getTrendingCoins(currency));
+      setTrending(data);
+      setLoading(false);
+    };
     fetchTrendingCoins();
   }, [currency]);
 
