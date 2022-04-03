@@ -41,7 +41,7 @@ const Trending = ({ currency }) => {
   return (
     <div className={styles.container}>
       <Carousel responsive={responsive}>
-        {loading && (
+        {loading ? (
           <Stack
             display="flex"
             alignItems="center"
@@ -50,21 +50,22 @@ const Trending = ({ currency }) => {
           >
             <CircularProgress />
           </Stack>
+        ) : (
+          trending.map((coin) => (
+            <TrendingCoin
+              key={coin.id}
+              coinData={{
+                id: coin.id,
+                name: coin.name,
+                img: coin.image,
+                price_change: coin.price_change_percentage_24h,
+                price: coin.current_price,
+                high: coin.high_24h,
+                low: coin.low_24h,
+              }}
+            />
+          ))
         )}
-        {trending.map((coin) => (
-          <TrendingCoin
-            key={coin.id}
-            coinData={{
-              id: coin.id,
-              name: coin.name,
-              img: coin.image,
-              price_change: coin.price_change_percentage_24h,
-              price: coin.current_price,
-              high: coin.high_24h,
-              low: coin.low_24h,
-            }}
-          />
-        ))}
       </Carousel>
     </div>
   );
